@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DMV Web Works — Simple Websites for DMV Small Businesses, Live in 7 Days</title>
+<meta name="description" content="Simple, mobile-friendly websites for DMV small businesses — live in 7 days. Fixed price, no jargon. Starter sites from $350." />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="DMV Web Works — Websites for DMV Small Businesses" />
+<meta property="og:description" content="Simple, mobile-friendly websites for DMV small businesses — live in 7 days. Fixed price. No jargon." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dmvwebworks.com/" />
+<link rel="canonical" href="https://dmvwebworks.com/" />
+<style>
+:root {
+  --navy: #0f1b33;
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --bg: #f8fafc;
+  --text: #1e293b;
+  --muted: #64748b;
+  --white: #ffffff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', -apple-system, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+a { text-decoration: none; color: inherit; }
+
+/* NAV */
+nav { background: var(--white); border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1040px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-weight: 800; font-size: 1.2rem; color: var(--navy); }
+.logo span { color: var(--blue); }
+.nav-cta { background: var(--blue); color: white; font-weight: 700; font-size: 0.9rem; padding: 10px 20px; border-radius: 8px; }
+.nav-cta:hover { background: var(--blue-dark); }
+
+/* HERO */
+.hero { background: linear-gradient(160deg, var(--navy) 0%, #16295c 100%); color: white; text-align: center; padding: 88px 24px 96px; }
+.hero h1 { font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 900; line-height: 1.2; max-width: 760px; margin: 0 auto 20px; }
+.hero h1 em { color: #7ab8ff; font-style: normal; }
+.hero p { font-size: 1.15rem; color: #c7d4ee; max-width: 520px; margin: 0 auto 36px; }
+.btn { display: inline-block; background: var(--blue); color: white; font-weight: 800; font-size: 1.05rem; padding: 16px 36px; border-radius: 10px; transition: background 0.2s, transform 0.2s; }
+.btn:hover { background: var(--blue-dark); transform: translateY(-2px); }
+
+/* PROBLEM */
+.problem { max-width: 720px; margin: 0 auto; padding: 72px 24px 24px; text-align: center; }
+.problem h2 { font-size: 1.6rem; font-weight: 800; color: var(--navy); margin-bottom: 14px; }
+.problem p { font-size: 1.08rem; color: var(--muted); }
+
+/* DELIVER CARDS */
+.deliver { max-width: 1040px; margin: 0 auto; padding: 48px 24px 72px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.card { background: var(--white); border: 1px solid #e2e8f0; border-radius: 14px; padding: 32px 28px; text-align: center; }
+.card .icon { font-size: 2.4rem; margin-bottom: 14px; }
+.card h3 { font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.card p { font-size: 0.95rem; color: var(--muted); }
+
+/* PROOF */
+.proof { background: var(--white); border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 72px 24px; }
+.proof-inner { max-width: 1040px; margin: 0 auto; }
+.section-head { text-align: center; margin-bottom: 40px; }
+.section-head h2 { font-size: 1.7rem; font-weight: 900; color: var(--navy); margin-bottom: 8px; }
+.section-head p { color: var(--muted); }
+.work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; max-width: 860px; margin: 0 auto; }
+.work { border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; background: var(--bg); display: block; }
+.work:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(15,27,51,0.12); }
+.work-preview { height: 190px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+.wp-stream { background: linear-gradient(135deg, #1a0a3e, #0e0e1a); }
+.wp-stream .wp-title { color: #b78aff; }
+.wp-money { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+.wp-money .wp-title { color: #f5a623; }
+.wp-emoji { font-size: 2.6rem; }
+.wp-title { font-weight: 900; font-size: 1.25rem; }
+.wp-sub { color: rgba(255,255,255,0.65); font-size: 0.8rem; }
+.work-body { padding: 20px 22px; background: var(--white); }
+.work-body h3 { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+.work-body p { font-size: 0.9rem; color: var(--muted); margin-bottom: 10px; }
+.work-body .visit { color: var(--blue); font-weight: 700; font-size: 0.9rem; }
+
+/* PRICING */
+.pricing { max-width: 1040px; margin: 0 auto; padding: 72px 24px; }
+.price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: stretch; }
+.plan { background: var(--white); border: 1px solid #e2e8f0; border-radius: 14px; padding: 32px 28px; display: flex; flex-direction: column; }
+.plan.popular { border: 2px solid var(--blue); position: relative; box-shadow: 0 12px 32px rgba(37,99,235,0.12); }
+.plan .badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--blue); color: white; font-size: 0.72rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; }
+.plan h3 { font-size: 1.1rem; font-weight: 800; color: var(--navy); }
+.plan .price { font-size: 2.3rem; font-weight: 900; color: var(--navy); margin: 10px 0 4px; }
+.plan .price small { font-size: 0.95rem; color: var(--muted); font-weight: 600; }
+.plan ul { list-style: none; margin: 18px 0 24px; flex: 1; }
+.plan li { padding: 7px 0 7px 26px; position: relative; font-size: 0.93rem; color: var(--text); }
+.plan li::before { content: '✓'; position: absolute; left: 0; color: var(--blue); font-weight: 800; }
+.plan .btn { text-align: center; font-size: 0.95rem; padding: 13px 0; }
+.care { max-width: 720px; margin: 40px auto 0; background: var(--navy); color: white; border-radius: 14px; padding: 28px 32px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+.care h3 { font-size: 1.05rem; font-weight: 800; }
+.care p { font-size: 0.9rem; color: #c7d4ee; max-width: 420px; }
+.care .care-price { font-size: 1.6rem; font-weight: 900; white-space: nowrap; }
+.addons { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 24px; }
+
+/* CTA */
+.cta { background: linear-gradient(160deg, var(--navy) 0%, #16295c 100%); color: white; text-align: center; padding: 80px 24px; }
+.cta h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 900; margin-bottom: 12px; }
+.cta p { color: #c7d4ee; max-width: 520px; margin: 0 auto 30px; font-size: 1.05rem; }
+.cta .contact-line { margin-top: 28px; font-size: 1rem; color: #c7d4ee; }
+.cta .contact-line a { color: #7ab8ff; font-weight: 700; }
+
+/* FOOTER */
+footer { background: var(--navy); color: #8fa3c8; text-align: center; padding: 26px 24px; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.08); }
+
+@media (max-width: 620px) {
+  .hero { padding: 64px 20px 72px; }
+  .care { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-inner">
+<div class="logo">DMV <span>Web Works</span></div>
+<a class="nav-cta" href="#pricing">See Pricing</a>
+</div>
+</nav>
+
+<!-- SECTION 1: HERO -->
+<section class="hero">
+<h1>Simple, mobile-friendly websites for DMV small businesses — <em>live in 7 days.</em></h1>
+<p>Fixed price. No jargon. You focus on your business — we handle the website.</p>
+<a class="btn" href="#pricing">See Pricing</a>
+</section>
+
+<!-- SECTION 2: PROBLEM -->
+<section class="problem">
+<h2>No website? Or one that looks broken on a phone?</h2>
+<p>You're losing customers to competitors who show up on Google. Most people check a business online before they call or visit — if they can't find you, or your site doesn't load right on their phone, they move on to the next result.</p>
+</section>
+
+<!-- SECTION 3: WHAT YOU GET -->
+<section class="deliver">
+<div class="cards">
+<div class="card">
+<div class="icon">📱</div>
+<h3>Mobile-Friendly</h3>
+<p>Looks great on any phone, tablet, or computer. Most of your customers are on their phones — your site will be built for them first.</p>
+</div>
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Live in a Week</h3>
+<p>No months-long projects. Your site is up and working in 7 days or less, so you start showing up on Google right away.</p>
+</div>
+<div class="card">
+<div class="icon">✅</div>
+<h3>Done-For-You</h3>
+<p>You don't touch a thing. Domain, hosting, setup, content — handled. You review it, we launch it.</p>
+</div>
+</div>
+</section>
+
+<!-- SECTION 4: PROOF -->
+<section class="proof" id="work">
+<div class="proof-inner">
+<div class="section-head">
+<h2>Recent Work</h2>
+<p>Live sites, built from scratch — click to see them.</p>
+</div>
+<div class="work-grid">
+<a class="work" href="https://streamstarters.online" target="_blank" rel="noopener">
+<div class="work-preview wp-stream">
+<div class="wp-emoji">🎮</div>
+<div class="wp-title">StreamStarters</div>
+<div class="wp-sub">streamstarters.online</div>
+</div>
+<div class="work-body">
+<h3>StreamStarters</h3>
+<p>A 13-page guide site for new streamers — mobile-first, fast-loading, and ranking on Google.</p>
+<span class="visit">Visit live site →</span>
+</div>
+</a>
+<a class="work" href="https://moneywiseside.online" target="_blank" rel="noopener">
+<div class="work-preview wp-money">
+<div class="wp-emoji">💰</div>
+<div class="wp-title">MoneyWise</div>
+<div class="wp-sub">moneywiseside.online</div>
+</div>
+<div class="work-body">
+<h3>MoneyWise</h3>
+<p>An 18-page personal-finance publication with clean article layouts, search-ready structure, and ads integration.</p>
+<span class="visit">Visit live site →</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+<div class="section-head">
+<h2>Simple, Fixed Pricing</h2>
+<p>No hourly rates. No surprises. 50% to start, 50% when your site goes live.</p>
+</div>
+<div class="price-grid">
+<div class="plan">
+<h3>Starter</h3>
+<div class="price">$350</div>
+<ul>
+<li>1-page website</li>
+<li>Mobile-friendly design</li>
+<li>Contact form</li>
+<li>Basic SEO setup</li>
+</ul>
+<a class="btn" href="#contact">Get Started</a>
+</div>
+<div class="plan popular">
+<div class="badge">Most Popular</div>
+<h3>Standard</h3>
+<div class="price">$650</div>
+<ul>
+<li>Up to 5 pages</li>
+<li>Contact form</li>
+<li>Google Maps + business listing</li>
+<li>Basic SEO</li>
+</ul>
+<a class="btn" href="#contact">Get Started</a>
+</div>
+<div class="plan">
+<h3>Premium</h3>
+<div class="price">$1,200</div>
+<ul>
+<li>Up to 8 pages</li>
+<li>Everything in Standard</li>
+<li>Booking / scheduling or gallery</li>
+<li>Logo touch-up</li>
+</ul>
+<a class="btn" href="#contact">Get Started</a>
+</div>
+</div>
+<div class="care">
+<div>
+<h3>🛡️ Care Plan — keep it running</h3>
+<p>Your site stays live, secure, and current — you never touch it. Hosting, domain management, small monthly updates, and uptime checks.</p>
+</div>
+<div class="care-price">$40<small style="font-size:0.9rem;font-weight:600;">/mo</small></div>
+</div>
+<p class="addons">Add-ons: extra page $75 · logo design $100 · rush delivery (under 5 days) +$150</p>
+</section>
+
+<!-- SECTION 5: CTA -->
+<section class="cta" id="contact">
+<h2>Ready to get your business online?</h2>
+<p>Websites from $350, live in a week. Tell me about your business and I'll send you a free quote — no pressure, no jargon.</p>
+<a class="btn" href="mailto:ajjalloh15@gmail.com?subject=Website%20Quote%20Request">Get a Free Quote</a>
+<p class="contact-line">Or reach me directly: <a href="mailto:ajjalloh15@gmail.com">ajjalloh15@gmail.com</a> · <a href="tel:+17043524121">704-352-4121</a></p>
+</section>
+
+<footer>
+Built in the DMV · © 2026 DMV Web Works · Websites for local businesses
+</footer>
+
+</body>
+</html>
