@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Noir Hair Lounge — Editorial Color & Cutting Studio</title>
+<meta name="description" content="Noir Hair Lounge — an editorial color and cutting studio for bold, precise hair." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0b0b0c;
+  --charcoal: #17171a;
+  --panel: #1f1f23;
+  --gold: #c9a24b;
+  --gold-soft: #e3c988;
+  --cream: #f4f1ea;
+  --muted: #9b9a97;
+  --line: rgba(244,241,234,0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--black); color: var(--cream); line-height: 1.7; font-weight: 300; }
+h1, h2, h3, .brand { font-family: 'Cormorant Garamond', serif; }
+a { text-decoration: none; color: inherit; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+
+/* NAV */
+header { position: sticky; top: 0; z-index: 200; background: rgba(11,11,12,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 90px; }
+.brand { font-size: 1.7rem; font-weight: 600; letter-spacing: 1px; }
+.brand em { color: var(--gold); font-style: italic; }
+nav.links { display: flex; gap: 40px; font-size: 0.78rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); }
+nav.links a { transition: color 0.2s; }
+nav.links a:hover { color: var(--gold-soft); }
+.nav-cta { border: 1px solid var(--gold); color: var(--gold-soft); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; padding: 12px 28px; transition: all 0.25s; }
+.nav-cta:hover { background: var(--gold); color: var(--black); }
+
+/* HERO */
+.hero { min-height: 92vh; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; position: relative; }
+.hero-left { padding: 60px 60px 60px 32px; position: relative; z-index: 2; }
+.hero-left .eyebrow { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 26px; display: block; }
+.hero-left h1 { font-size: clamp(2.6rem, 5.4vw, 4.6rem); font-weight: 600; line-height: 1.08; margin-bottom: 28px; }
+.hero-left h1 em { color: var(--gold-soft); font-style: italic; }
+.hero-left p { color: var(--muted); max-width: 440px; margin-bottom: 42px; font-size: 1.02rem; }
+.hero-btns { display: flex; gap: 20px; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 17px 36px; font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.25s; }
+.btn-primary { background: var(--gold); color: var(--black); font-weight: 500; }
+.btn-primary:hover { background: var(--gold-soft); }
+.btn-outline { border: 1px solid var(--muted); color: var(--cream); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold-soft); }
+.hero-right { height: 92vh; position: relative; background:
+  linear-gradient(160deg, var(--panel) 0%, var(--charcoal) 45%, var(--black) 100%); overflow: hidden; }
+.hero-right::before { content: '✂'; position: absolute; font-size: 22rem; color: rgba(201,162,75,0.06); top: 50%; left: 50%; transform: translate(-50%,-50%) rotate(-15deg); }
+.hero-right .frame { position: absolute; inset: 40px; border: 1px solid rgba(201,162,75,0.35); }
+.hero-right .caption { position: absolute; bottom: 50px; left: 50px; }
+.hero-right .caption strong { display: block; font-size: 2rem; color: var(--gold-soft); font-family: 'Cormorant Garamond', serif; }
+.hero-right .caption span { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+
+/* MARQUEE */
+.strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 20px 0; overflow: hidden; white-space: nowrap; background: var(--charcoal); }
+.strip-inner { display: inline-flex; gap: 56px; animation: scroll 30s linear infinite; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--gold-soft); }
+.strip-inner span::after { content: '—'; margin-left: 56px; color: var(--muted); font-style: normal; }
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* SECTION */
+.section { padding: 130px 32px; }
+.section-head { max-width: 640px; margin-bottom: 70px; }
+.section-head .eyebrow { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 18px; display: block; }
+.section-head h2 { font-size: clamp(2.1rem, 4.4vw, 3.1rem); font-weight: 600; margin-bottom: 18px; }
+.section-head p { color: var(--muted); font-size: 1.02rem; }
+.section-head.center { text-align: center; margin-left: auto; margin-right: auto; }
+
+/* SERVICES - editorial list */
+.services { background: var(--charcoal); }
+.service-list { border-top: 1px solid var(--line); }
+.service-row { display: grid; grid-template-columns: 60px 1.4fr 2fr auto; align-items: center; gap: 30px; padding: 30px 0; border-bottom: 1px solid var(--line); transition: background 0.2s; }
+.service-row:hover { background: rgba(201,162,75,0.04); }
+.service-row .idx { font-family: 'Cormorant Garamond', serif; color: var(--gold-soft); font-size: 1rem; }
+.service-row h3 { font-size: 1.35rem; font-weight: 600; }
+.service-row p { color: var(--muted); font-size: 0.9rem; }
+.service-row .price { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--gold-soft); text-align: right; white-space: nowrap; }
+
+/* GALLERY - editorial grid */
+.gallery-grid { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 130px; gap: 12px; }
+.gallery-grid div { position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 16px; font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--cream); }
+.g1 { grid-column: span 3; grid-row: span 3; background: linear-gradient(150deg,#2a2a2f,#0b0b0c); }
+.g2 { grid-column: span 3; background: linear-gradient(150deg,#3a3226,#1f1f23); }
+.g3 { grid-column: span 2; grid-row: span 2; background: linear-gradient(150deg,#c9a24b,#7a5f2c); color:#0b0b0c; }
+.g4 { grid-column: span 1; grid-row: span 2; background: linear-gradient(150deg,#1f1f23,#0b0b0c); }
+.g5 { grid-column: span 3; background: linear-gradient(150deg,#0b0b0c,#2a2a2f); }
+.g6 { grid-column: span 3; background: linear-gradient(150deg,#3a3226,#c9a24b); color:#0b0b0c; }
+
+/* STYLISTS */
+.team { background: var(--black); }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line); }
+.stylist { background: var(--black); padding: 50px 34px; }
+.stylist .initial { width: 62px; height: 62px; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--gold-soft); margin-bottom: 26px; }
+.stylist h3 { font-size: 1.4rem; margin-bottom: 4px; font-weight: 600; }
+.stylist .role { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; display: block; }
+.stylist p { font-size: 0.9rem; color: var(--muted); }
+
+/* TESTIMONIALS */
+.testimonials { background: var(--charcoal); }
+.t-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--line); }
+.t-card { background: var(--charcoal); padding: 50px 40px; }
+.t-card .stars { color: var(--gold); margin-bottom: 20px; letter-spacing: 4px; font-size: 0.9rem; }
+.t-card p { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; color: var(--cream); margin-bottom: 24px; line-height: 1.5; }
+.t-card .who { font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+
+/* CTA */
+.cta { text-align: center; padding: 150px 32px; background: linear-gradient(180deg, var(--black), var(--charcoal)); position: relative; }
+.cta .eyebrow { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 22px; display: block; }
+.cta h2 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); font-weight: 600; margin-bottom: 22px; }
+.cta p { color: var(--muted); max-width: 460px; margin: 0 auto 40px; }
+
+/* FOOTER */
+footer { background: var(--black); border-top: 1px solid var(--line); padding: 70px 32px 34px; }
+.foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+.foot-grid h4 { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 20px; font-weight: 500; }
+.foot-grid p, .foot-grid a { font-size: 0.9rem; color: var(--muted); display: block; margin-bottom: 12px; }
+.foot-grid a:hover { color: var(--gold-soft); }
+.foot-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--cream); margin-bottom: 16px; }
+.foot-bottom { border-top: 1px solid var(--line); padding-top: 28px; display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--muted); flex-wrap: wrap; gap: 10px; letter-spacing: 0.5px; }
+
+@media (max-width: 900px) {
+  nav.links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { height: 50vh; }
+  .hero-left { padding: 60px 24px; }
+  .service-row { grid-template-columns: 40px 1fr; row-gap: 6px; }
+  .service-row p, .service-row .price { grid-column: 2; text-align: left; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .g1, .g2, .g5, .g6 { grid-column: span 2; }
+  .team-grid, .t-grid { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap nav-inner">
+<div class="brand">NOIR <em>Lounge</em></div>
+<nav class="links">
+<a href="#about">Studio</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#team">Stylists</a>
+<a href="#contact">Contact</a>
+</nav>
+<a class="nav-cta" href="#contact">Reserve a Chair</a>
+</div>
+</header>
+
+<section class="hero" id="about">
+<div class="hero-left">
+<span class="eyebrow">Editorial Hair Studio — Georgetown</span>
+<h1>Bold color.<br><em>Precision</em> cutting.</h1>
+<p>Noir Hair Lounge is an appointment-only studio for clients who want their hair treated like a craft, not a commodity.</p>
+<div class="hero-btns">
+<a class="btn btn-primary" href="#contact">Reserve a Chair</a>
+<a class="btn btn-outline" href="#services">See Services</a>
+</div>
+</div>
+<div class="hero-right">
+<div class="frame"></div>
+<div class="caption"><strong>Est. 2019</strong><span>Georgetown, DC</span></div>
+</div>
+</section>
+
+<div class="strip">
+<div class="strip-inner">
+<span>Editorial Color</span><span>Precision Cutting</span><span>Vivid & Fashion Color</span><span>Extensions</span><span>Texture Services</span><span>Editorial Color</span><span>Precision Cutting</span><span>Vivid & Fashion Color</span><span>Extensions</span><span>Texture Services</span>
+</div>
+</div>
+
+<section class="section services" id="services">
+<div class="wrap">
+<div class="section-head">
+<span class="eyebrow">Menu</span>
+<h2>Services</h2>
+<p>By appointment only. Consultations included on all first visits.</p>
+</div>
+<div class="service-list">
+<div class="service-row">
+<span class="idx">01</span>
+<h3>Signature Cut</h3>
+<p>Consultation, cut, and style — tailored to your face and lifestyle.</p>
+<span class="price">$85+</span>
+</div>
+<div class="service-row">
+<span class="idx">02</span>
+<h3>Full Color Transformation</h3>
+<p>Complete color rework with custom formulation.</p>
+<span class="price">$280+</span>
+</div>
+<div class="service-row">
+<span class="idx">03</span>
+<h3>Vivid / Fashion Color</h3>
+<p>Bold, saturated tones — from face-framing pops to full commitment.</p>
+<span class="price">$220+</span>
+</div>
+<div class="service-row">
+<span class="idx">04</span>
+<h3>Hand-Tied Extensions</h3>
+<p>Seamless length and volume, application and blend included.</p>
+<span class="price">$450+</span>
+</div>
+<div class="service-row">
+<span class="idx">05</span>
+<h3>Texture & Wave Service</h3>
+<p>Perms and texturizing for lived-in movement.</p>
+<span class="price">$160+</span>
+</div>
+<div class="service-row">
+<span class="idx">06</span>
+<h3>Gloss & Toner Refresh</h3>
+<p>Quick color refresh between full services.</p>
+<span class="price">$65+</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section gallery" id="gallery">
+<div class="wrap">
+<div class="section-head">
+<span class="eyebrow">Portfolio</span>
+<h2>Recent Work</h2>
+<p>A selection of color and cutting work from the lounge.</p>
+</div>
+<div class="gallery-grid">
+<div class="g1">Fashion Color, Vol. 3</div>
+<div class="g2">Blunt Editorial Cut</div>
+<div class="g3">Copper Melt</div>
+<div class="g4">Texture</div>
+<div class="g5">Platinum Transformation</div>
+<div class="g6">Studio Session</div>
+</div>
+</div>
+</section>
+
+<section class="team" id="team">
+<div class="wrap">
+<div class="section-head" style="padding-top:130px;">
+<span class="eyebrow">The Team</span>
+<h2>Stylists & Colorists</h2>
+</div>
+</div>
+<div class="team-grid">
+<div class="stylist">
+<div class="initial">V</div>
+<h3>Vera Okafor</h3>
+<span class="role">Founder · Color Director</span>
+<p>Editorial and fashion color, 14 years in the industry — formerly NYC.</p>
+</div>
+<div class="stylist">
+<div class="initial">L</div>
+<h3>Lena Marsh</h3>
+<span class="role">Master Cutting Stylist</span>
+<p>Precision and texture cutting, trained in London.</p>
+</div>
+<div class="stylist">
+<div class="initial">S</div>
+<h3>Simone Reyes</h3>
+<span class="role">Extension Specialist</span>
+<p>Hand-tied and tape-in extension expert.</p>
+</div>
+</div>
+</section>
+
+<section class="testimonials">
+<div class="wrap">
+<div class="section-head" style="padding-top:130px;">
+<span class="eyebrow">Reviews</span>
+<h2>In Their Words</h2>
+</div>
+</div>
+<div class="t-grid">
+<div class="t-card">
+<div class="stars">★★★★★</div>
+<p>"Vera turned my hair into something I'd only seen on Pinterest boards. Worth every appointment slot."</p>
+<div class="who">— Whitney A.</div>
+</div>
+<div class="t-card">
+<div class="stars">★★★★★</div>
+<p>"The most precise cut I've ever had. Lena studies your face before she picks up scissors."</p>
+<div class="who">— Camille R.</div>
+</div>
+</div>
+</section>
+
+<section class="cta" id="contact">
+<span class="eyebrow">Book Your Appointment</span>
+<h2>Reserve your chair.</h2>
+<p>Appointment-only studio — book ahead, especially for color services.</p>
+<div class="hero-btns" style="justify-content:center;">
+<a class="btn btn-primary" href="mailto:book@noirhairlounge.com">Book by Email</a>
+<a class="btn btn-outline" href="tel:+12025550178">(202) 555-0178</a>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<div class="foot-grid">
+<div>
+<div class="foot-brand">Noir Hair Lounge</div>
+<p>An appointment-only editorial hair studio in Georgetown, DC.</p>
+</div>
+<div>
+<h4>Studio</h4>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#team">Stylists</a>
+</div>
+<div>
+<h4>Visit</h4>
+<p>3210 M St NW<br>Washington, DC 20007</p>
+<p>Wed–Sun, 10am–8pm</p>
+</div>
+<div>
+<h4>Contact</h4>
+<a href="mailto:book@noirhairlounge.com">book@noirhairlounge.com</a>
+<a href="tel:+12025550178">(202) 555-0178</a>
+</div>
+</div>
+<div class="foot-bottom">
+<span>© 2026 Noir Hair Lounge. Mockup for portfolio use.</span>
+<span>Site by DMV Web Works</span>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
